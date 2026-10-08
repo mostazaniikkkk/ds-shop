@@ -102,15 +102,19 @@ public.
 
 ## 2. Build the DS client
 
-With devkitPro (devkitARM + libnds, dswifi and libfat) installed:
+You only need **Docker**. The build runs inside the official devkitPro image,
+so nothing is installed on your system:
 
 ```
-homebrew/build.sh        # -> homebrew/DSShop.nds
-homebrew/build.sh r4     # also DSShop_R4.nds, patched with the original R4 DLDI driver
+sh homebrew/build.sh        # -> homebrew/DSShop.nds
+sh homebrew/build.sh r4     # also DSShop_R4.nds, patched with the original R4 DLDI driver
+sh homebrew/build.sh clean
 ```
 
-`build.sh` maps the folder to a drive letter with `subst` because `make` does
-not support paths with spaces (remove it with `subst Q: /d`).
+The image is pinned (`devkitpro/devkitarm:20240918`: devkitARM r65, libnds
+1.8.3, dswifi 0.4.2) because newer images ship libnds 2.x, which this code
+does not target yet. On Windows, run it from Git Bash with Docker Desktop
+started.
 
 By default titles from all stores are shown **together**: categories with the
 same name are merged, each title shows which store it comes from, and a game
