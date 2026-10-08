@@ -175,3 +175,18 @@ set up from a game with Nintendo WFC). The original DS can only join **open or
 WEP** networks: with a modern router, the easiest option is an open guest
 network or a phone hotspot without a password. In melonDS it works with no
 setup: use your PC's LAN IP address (not `localhost`).
+
+## License
+
+This project is dedicated to the public domain under
+[CC0 1.0](LICENSE): use it however you like, no attribution required.
+
+Exceptions (third-party code, under its own license, whose notices must be kept):
+
+- `homebrew/arm9/source/quirc/`: [quirc](https://github.com/dlbeer/quirc), ISC license (`quirc/LICENSE`).
+- `homebrew/arm7/source/camera.c` and the camera part of `homebrew/arm9/source/qr.c`: adapted from
+  [BlocksDS libnds](https://github.com/blocksds/libnds), Zlib license (notice in the file).
+- `homebrew/dldi/r4tf.dldi`: the original R4 DLDI driver, from https://www.chishm.com/DLDI/.
+
+The Nintendo assets the tools extract from your NAND are not covered by this
+license and are not part of the repository.
